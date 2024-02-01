@@ -5,7 +5,7 @@ using Bookify.Domain.Apartments;
 using Bookify.Domain.Bookings;
 using Bookify.Domain.Users;
 
-namespace Bookify.Application.Abstractions.Bookings.ReserveBooking;
+namespace Bookify.Application.Bookings.ReserveBooking;
 
 internal sealed class ReserveBookingCommandHandler : ICommandHandler<ReserveBookingCommand, Guid>
 {
