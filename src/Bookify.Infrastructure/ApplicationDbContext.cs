@@ -1,3 +1,4 @@
+using Bookify.Application.Exceptions;
 using Bookify.Domain.Abstractions;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,5 +16,21 @@ public class ApplicationDbContext : DbContext, IUnitOfWork
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
 
         base.OnModelCreating(modelBuilder);
+    }
+
+    public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+    {
+        try
+        {
+            // AddDomainEventsAsOutboxMessages();
+
+            int result = await base.SaveChangesAsync(cancellationToken);
+
+            return result;
+        }
+        catch (DbUpdateConcurrencyException ex)
+        {
+            throw new ConcurrencyException("Concurrency exception occurred.", ex);
+        }
     }
 }
