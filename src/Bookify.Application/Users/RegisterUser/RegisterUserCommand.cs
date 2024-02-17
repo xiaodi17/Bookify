@@ -1,6 +1,6 @@
 using Bookify.Application.Abstractions.Messages;
 
-namespace Bookify.Application.Users;
+namespace Bookify.Application.Users.RegisterUser;
 
 public sealed record RegisterUserCommand(
     string Email,

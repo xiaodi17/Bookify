@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace Bookify.Application.Users;
+namespace Bookify.Application.Users.RegisterUser;
 
 internal sealed class RegisterUserCommandValidator : AbstractValidator<RegisterUserCommand>
 {
