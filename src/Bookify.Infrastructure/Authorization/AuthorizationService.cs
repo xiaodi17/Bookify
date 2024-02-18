@@ -37,25 +37,25 @@ internal sealed class AuthorizationService
         return roles;
     }
 
-    // public async Task<HashSet<string>> GetPermissionsForUserAsync(string identityId)
-    // {
-    //     string cacheKey = $"auth:permissions-{identityId}";
-    //     HashSet<string>? cachedPermissions = await _cacheService.GetAsync<HashSet<string>>(cacheKey);
-    //
-    //     if (cachedPermissions is not null)
-    //     {
-    //         return cachedPermissions;
-    //     }
-    //
-    //     ICollection<Permission> permissions = await _dbContext.Set<User>()
-    //         .Where(u => u.IdentityId == identityId)
-    //         .SelectMany(u => u.Roles.Select(r => r.Permissions))
-    //         .FirstAsync();
-    //
-    //     var permissionsSet = permissions.Select(p => p.Name).ToHashSet();
-    //
-    //     await _cacheService.SetAsync(cacheKey, permissionsSet);
-    //
-    //     return permissionsSet;
-    // }
+    public async Task<HashSet<string>> GetPermissionsForUserAsync(string identityId)
+    {
+        string cacheKey = $"auth:permissions-{identityId}";
+        // HashSet<string>? cachedPermissions = await _cacheService.GetAsync<HashSet<string>>(cacheKey);
+
+        // if (cachedPermissions is not null)
+        // {
+        //     return cachedPermissions;
+        // }
+        //
+        ICollection<Permission> permissions = await _dbContext.Set<User>()
+            .Where(u => u.IdentityId == identityId)
+            .SelectMany(u => u.Roles.Select(r => r.Permissions))
+            .FirstAsync();
+
+        var permissionsSet = permissions.Select(p => p.Name).ToHashSet();
+
+        // await _cacheService.SetAsync(cacheKey, permissionsSet);
+
+        return permissionsSet;
+    }
 }
