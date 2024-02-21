@@ -1,4 +1,4 @@
-namespace Bookify.Application.Users.GetLoggedInUser;
+﻿namespace Bookify.Application.Users.GetLoggedInUser;
 
 public sealed class UserResponse
 {

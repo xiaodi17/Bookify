@@ -1,3 +1,4 @@
+﻿using Asp.Versioning;
 using Bookify.Application.Users.GetLoggedInUser;
 using Bookify.Application.Users.LogInUser;
 using Bookify.Application.Users.RegisterUser;
@@ -10,7 +11,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace Bookify.Api.Controllers.Users;
 
 [ApiController]
-[Route("api/users")]
+[ApiVersion(ApiVersions.V1)]
+[Route("api/v{version:apiVersion}/users")]
 public class UsersController : ControllerBase
 {
     private readonly ISender _sender;
@@ -30,7 +32,6 @@ public class UsersController : ControllerBase
 
         return Ok(result.Value);
     }
-
 
     [AllowAnonymous]
     [HttpPost("register")]
@@ -62,7 +63,7 @@ public class UsersController : ControllerBase
     {
         var command = new LogInUserCommand(request.Email, request.Password);
 
-        var result = await _sender.Send(command, cancellationToken);
+        Result<AccessTokenResponse> result = await _sender.Send(command, cancellationToken);
 
         if (result.IsFailure)
         {

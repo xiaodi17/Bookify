@@ -1,4 +1,4 @@
-namespace Bookify.Infrastructure.Authentication.Models;
+﻿namespace Bookify.Infrastructure.Authentication.Models;
 
 internal class CredentialRepresentationModel
 {

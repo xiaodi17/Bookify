@@ -1,4 +1,4 @@
-using Bookify.Application.Abstractions.Behaviors;
+﻿using Bookify.Application.Abstractions.Behaviors;
 using Bookify.Domain.Bookings;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;

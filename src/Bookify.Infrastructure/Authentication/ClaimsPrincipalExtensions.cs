@@ -1,4 +1,4 @@
-using System.Security.Claims;
+﻿using System.Security.Claims;
 using Microsoft.IdentityModel.JsonWebTokens;
 
 namespace Bookify.Infrastructure.Authentication;

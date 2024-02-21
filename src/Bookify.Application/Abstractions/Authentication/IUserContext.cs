@@ -1,4 +1,4 @@
-namespace Bookify.Application.Abstractions.Authentication;
+﻿namespace Bookify.Application.Abstractions.Authentication;
 
 public interface IUserContext
 {

@@ -1,4 +1,4 @@
-using Bookify.Domain.Apartments;
+﻿using Bookify.Domain.Apartments;
 using Bookify.Domain.Bookings;
 using Bookify.Domain.Shared;
 using Bookify.Domain.Users;

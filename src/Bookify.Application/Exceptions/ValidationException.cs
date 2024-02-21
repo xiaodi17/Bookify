@@ -1,4 +1,4 @@
-namespace Bookify.Application.Exceptions;
+﻿namespace Bookify.Application.Exceptions;
 
 public sealed class ValidationException : Exception
 {
