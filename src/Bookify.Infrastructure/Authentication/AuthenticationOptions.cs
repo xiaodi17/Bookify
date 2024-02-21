@@ -1,4 +1,4 @@
-namespace Bookify.Infrastructure.Authentication;
+﻿namespace Bookify.Infrastructure.Authentication;
 
 public sealed class AuthenticationOptions
 {

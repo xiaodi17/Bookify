@@ -1,4 +1,4 @@
-using Bookify.Application.Exceptions;
+﻿using Bookify.Application.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Bookify.Api.Middleware;

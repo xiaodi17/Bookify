@@ -1,4 +1,4 @@
-using System.Data;
+﻿using System.Data;
 using Bogus;
 using Bookify.Application.Abstractions.Data;
 using Bookify.Domain.Apartments;

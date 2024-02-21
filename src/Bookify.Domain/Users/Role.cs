@@ -1,4 +1,4 @@
-namespace Bookify.Domain.Users;
+﻿namespace Bookify.Domain.Users;
 
 public sealed class Role
 {

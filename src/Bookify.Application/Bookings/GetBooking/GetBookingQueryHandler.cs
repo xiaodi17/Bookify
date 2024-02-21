@@ -1,4 +1,4 @@
-using System.Data;
+﻿using System.Data;
 using Bookify.Application.Abstractions.Authentication;
 using Bookify.Application.Abstractions.Data;
 using Bookify.Application.Abstractions.Messages;
@@ -59,4 +59,3 @@ internal sealed class GetBookingQueryHandler : IQueryHandler<GetBookingQuery, Bo
         return booking;
     }
 }
-
