@@ -1,4 +1,4 @@
-﻿using Bookify.Application.Abstractions.Messaging;
+﻿using Bookify.Application.Abstractions.Messages;
 
 namespace Bookify.Application.Abstractions.Caching;
 
